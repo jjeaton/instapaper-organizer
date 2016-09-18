@@ -31,13 +31,13 @@ X_AUTH_PASSWORD=
 php artisan move:seth {folder_id}
 ```
 
-Move all Seth Godin bookmarks in `{folder_id` to the `seth` folder.
+Move all Seth Godin bookmarks in `{folder_id}` to the `seth` folder.
 
 ```
 php artisan move:folder {folder_id}
 ```
 
-Move up to 500 bookmarks from Unread to `{folder_id`. (The API only allows a max of 500 bookmarks returned, so I created multiple folders and put 500 bookmarks in each folder so each could be reviewed.)
+Move up to 500 bookmarks from Unread to `{folder_id}`. (The API only allows a max of 500 bookmarks returned, so I created multiple folders and put 500 bookmarks in each folder so each could be reviewed.)
 
 ## Credits
 
