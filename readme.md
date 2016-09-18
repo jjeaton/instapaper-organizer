@@ -2,6 +2,8 @@
 
 An app to help you quickly scan through and organize your Instapaper bookmarks.
 
+![screenshot](https://cloud.githubusercontent.com/assets/835509/18612124/d93a2d9a-7d1e-11e6-8355-d66dbe09d09e.png)
+
 ## Why would I need this?
 
 _You wouldn't._
