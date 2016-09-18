@@ -1,26 +1,47 @@
-# Laravel PHP Framework
+# Instapaper Organizer
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+An app to help you quickly scan through and organize your Instapaper bookmarks.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Why would I need this?
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+_You wouldn't._
 
-## Official Documentation
+I had nearly 3,000 articles saved in Instapaper and the existing app wasn't designed to allow me to quickly move/archive/delete bookmarks. After the Pinterest acquisition was announced I figured I should get to reading and organizing these before something terrible happens. It was a quick fun app to get some more Laravel experience.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+You need a paid Instapaper account with full API access in order to use this app.
 
-## Contributing
+I am running the site using [Laravel Valet](https://laravel.com/docs/5.3/valet) on my local machine. No database is required to run the app.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Configuration
 
-## Security Vulnerabilities
+Copy .env.example to .env and provide your Instapaper credentials:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+```
+INSTAPAPER_CONSUMER_KEY=
+INSTAPAPER_CONSUMER_SECRET=
+X_AUTH_USERNAME=
+X_AUTH_PASSWORD=
+```
+
+`SG_FOLDER_ID` is optional, and only used for the `move:seth` artisan command.
+
+## Artisan Commands
+
+```
+php artisan move:seth {folder_id}
+```
+
+Move all Seth Godin bookmarks in `{folder_id` to the `seth` folder.
+
+```
+php artisan move:folder {folder_id}
+```
+
+Move up to 500 bookmarks from Unread to `{folder_id`. (The API only allows a max of 500 bookmarks returned, so I created multiple folders and put 500 bookmarks in each folder so each could be reviewed.)
+
+## Credits
+
+Uses [InstapaperOauth](https://github.com/randyhoyt/InstapaperOAuth) to connect to the Instapaper API.
 
 ## License
 
