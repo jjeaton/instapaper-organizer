@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/list/{folder_id?}', 'BookmarksController@index');
+Route::get('/show/{id}', 'BookmarksController@show');
 Route::get('/archive/{id}', 'BookmarksController@archive');
 Route::get('/delete/{id}', 'BookmarksController@delete');
 Route::post('/move/{id}', 'BookmarksController@move');
