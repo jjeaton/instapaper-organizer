@@ -20,7 +20,7 @@ class BookmarksController extends Controller
         $apiFolders = $instapaper->client->list_folders();
         $folders = [];
 
-        foreach ($apiFolders as $key => $folder) {
+        foreach ((array)$apiFolders as $key => $folder) {
             $folders[ $folder->folder_id ] = $folder->title;
         }
 
@@ -40,7 +40,8 @@ class BookmarksController extends Controller
         $currentFolder = ( $folder_id === 'unread' ) ? 'Unread' : $folders[ $folder_id ];
 
         return view('list', [
-            'bookmarks' => $bookmarks,
+            'bookmarks' => (array)$bookmarks,
+            'totalBookmarks' => count($bookmarks),
             'currentFolderId' => $folder_id,
             'currentFolderTitle' => $currentFolder,
             'folders' => $folders,
@@ -70,6 +71,17 @@ class BookmarksController extends Controller
             'folder_id' => intval($folder_id),
         ]);
         return redirect('/list/' . $folder_id);
+    }
+
+    public function show($id) {
+        $instapaper = $this->getInstapaper();
+        $instapaper->client->decode_format = false;
+
+        $response = $instapaper->get('bookmarks/get_text', ['bookmark_id' => intval( $id )]);
+
+        return view('show', [
+            'bookmarkHtml' => $response,
+        ]);
     }
 
     public function ajaxArchive($id) {

@@ -60,4 +60,8 @@ class Instapaper {
 		$parameters['format'] = 'json';
 		return $this->client->post($this->client->host . $route, $parameters);
 	}
+
+	public function get($route, $parameters = []) {
+		return $this->client->get($this->client->host . $route, $parameters);
+	}
 }
