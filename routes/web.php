@@ -12,12 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('list/unread');
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 Route::get('/list/{folder_id?}', 'BookmarksController@index');
 Route::get('/archive/{id}', 'BookmarksController@archive');
