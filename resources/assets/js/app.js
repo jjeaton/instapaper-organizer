@@ -34,16 +34,14 @@ $(document).ready(function() {
 		var $this = $( this );
 		var bookmarkId = $this.data('id');
 		var $row = $this.closest('li');
-		window.console.log(APP_URL + '/ajax/archive/' + parseInt(bookmarkId, 10));
 		$.ajax(
 			APP_URL + '/ajax/archive/' + parseInt(bookmarkId, 10)
-		).done(function(resp) {
+		).fail(function(resp) {
 			console.log(resp);
-			$row.fadeOut('fast', function() {
-				$( this ).remove();
-			});
-		}).fail(function(resp) {
-			console.log(resp);
+		});
+
+		$row.fadeOut('fast', function() {
+			$( this ).remove();
 		});
 	});
 
@@ -53,16 +51,14 @@ $(document).ready(function() {
 		var $this = $( this );
 		var bookmarkId = $this.data('id');
 		var $row = $this.closest('li');
-		window.console.log(APP_URL + '/ajax/delete/' + parseInt(bookmarkId, 10));
 		$.ajax(
 			APP_URL + '/ajax/delete/' + parseInt(bookmarkId, 10)
-		).done(function(resp) {
+		).fail(function(resp) {
 			console.log(resp);
-			$row.fadeOut('fast', function() {
-				$( this ).remove();
-			});
-		}).fail(function(resp) {
-			console.log(resp);
+		});
+
+		$row.fadeOut('fast', function() {
+			$( this ).remove();
 		});
 	});
 
@@ -80,13 +76,12 @@ $(document).ready(function() {
 				'_token': token,
 				'folder_id': folderId
 			}
-		}).done(function(resp) {
-			console.log(resp);
-			$row.fadeOut('fast', function() {
-				$( this ).remove();
-			});
 		}).fail(function(resp) {
 			console.log(resp);
+		});
+
+		$row.fadeOut('fast', function() {
+			$( this ).remove();
 		});
 
 		e.preventDefault();
