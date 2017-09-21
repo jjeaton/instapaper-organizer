@@ -14,12 +14,16 @@
                                     <a href="{{ $bookmark->url }}">
                                         {{ $bookmark->title }}
                                     </a>
-                                    <a href="{{action('BookmarksController@show', $bookmark->bookmark_id)}}">-</a>
-                                     <button data-id="{{$bookmark->bookmark_id}}" class="js-archive-bookmark"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></button>
-                                    - <button data-id="{{$bookmark->bookmark_id}}" class="js-delete-bookmark"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                    - @include('partials.move_folder')
-                                   <br>
-                                   <small style="color:#888;">{{ $bookmark->url }}</small>
+                                    <p>
+                                        <small style="color:#888;">{{ $bookmark->url }}</small>
+                                    </p>
+                                    <div>
+                                        <button data-id="{{$bookmark->bookmark_id}}" class="js-archive-bookmark"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></button>
+                                        <a href="{{action('BookmarksController@show', $bookmark->bookmark_id)}}">-</a>
+                                         <button data-id="{{$bookmark->bookmark_id}}" class="js-delete-bookmark"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                        - @include('partials.move_folder')
+                                       <br>
+                                    </div>
                                 </li>
                             @endif
                         @endforeach
