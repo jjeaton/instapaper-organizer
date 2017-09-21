@@ -30,6 +30,12 @@ X_AUTH_PASSWORD=
 ## Artisan Commands
 
 ```
+php artisan instapaper:count
+```
+
+Count bookmarks in all folders
+
+```
 php artisan instapaper:seth {folder_id}
 ```
 

@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\Sethify::class,
         Commands\Move::class,
+        Commands\FolderCount::class,
     ];
 
     /**
