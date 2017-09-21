@@ -12,7 +12,7 @@ class Move extends Command
      *
      * @var string
      */
-    protected $signature = 'move:folder {folder_id}';
+    protected $signature = 'instapaper:move {folder_id}';
 
     /**
      * The console command description.

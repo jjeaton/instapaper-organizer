@@ -25,18 +25,18 @@ X_AUTH_USERNAME=
 X_AUTH_PASSWORD=
 ```
 
-`SG_FOLDER_ID` is optional, and only used for the `move:seth` artisan command.
+`SG_FOLDER_ID` is optional, and only used for the `instapaper:seth` artisan command.
 
 ## Artisan Commands
 
 ```
-php artisan move:seth {folder_id}
+php artisan instapaper:seth {folder_id}
 ```
 
 Move all Seth Godin bookmarks in `{folder_id}` to the `seth` folder.
 
 ```
-php artisan move:folder {folder_id}
+php artisan instapaper:folder {folder_id}
 ```
 
 Move up to 500 bookmarks from Unread to `{folder_id}`. (The API only allows a max of 500 bookmarks returned, so I created multiple folders and put 500 bookmarks in each folder so each could be reviewed.)

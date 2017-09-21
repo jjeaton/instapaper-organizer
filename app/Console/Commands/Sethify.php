@@ -12,7 +12,7 @@ class Sethify extends Command
      *
      * @var string
      */
-    protected $signature = 'move:seth {folder_id=unread}';
+    protected $signature = 'instapaper:seth {folder_id=unread}';
 
     /**
      * The console command description.
