@@ -11,7 +11,6 @@ class BookmarksController extends Controller
     public function getInstapaper() {
         $instapaper = new Instapaper();
         $instapaper->login();
-        $instapaper->is_user_active();
         return $instapaper;
     }
 
