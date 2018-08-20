@@ -52,7 +52,7 @@ class Sethify extends Command
         $moved = 0;
         foreach ($bookmarks as $bookmark) {
             if ( $bookmark->type === "bookmark" ) {
-                if (false !== stripos($bookmark->url, 'sethgodin.typepad.com') ) {
+                if (false !== stripos($bookmark->url, 'seths.blog') ) {
                     $this->line('Moving ' . $bookmark->bookmark_id . ': ' . $bookmark->url);
                     $instapaper->request('bookmarks/move', [
                         'bookmark_id' => intval($bookmark->bookmark_id),
