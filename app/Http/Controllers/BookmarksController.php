@@ -41,7 +41,7 @@ class BookmarksController extends Controller
 
         return view('list', [
             'bookmarks' => (array)$bookmarks,
-            'totalBookmarks' => count($bookmarks),
+            'totalBookmarks' => count($bookmarks) - 2, // There are two extra items in here.
             'currentFolderId' => $folder_id,
             'currentFolderTitle' => $currentFolder,
             'folders' => $folders,
