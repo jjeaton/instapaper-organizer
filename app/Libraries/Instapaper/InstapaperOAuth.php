@@ -29,7 +29,7 @@ class InstapaperOAuth {
 
     public $http_code;									/* Contains the last HTTP status code returned. */
     public $url;										/* Contains the last API call. */
-    public $host = "http://www.instapaper.com/api/1/";	/* Set up the API root URL. */
+    public $host = "https://www.instapaper.com/api/1/";	/* Set up the API root URL. */
     public $timeout = 30;								/* Set timeout default. */
     public $connecttimeout = 30;                        /* Set connect timeout. */
     public $ssl_verifypeer = FALSE;						/* Verify SSL Cert. */
