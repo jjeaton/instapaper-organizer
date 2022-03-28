@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
@@ -14,5 +15,8 @@
     "lodash": "^4.14.0",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
